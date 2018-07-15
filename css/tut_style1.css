@@ -1,0 +1,46 @@
+* {
+    background-color: black;
+}
+
+.pigs {display:grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    height: 50%;
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    margin: 10px;
+    border: 2px solid pink;
+}
+
+.pig1 {
+    height: 50px;
+    position: relative;
+    width: 100px;
+    background-repeat: no-repeat;
+    background-image: url("./../images/pig1.png");
+}
+
+.pig2 {
+    height: 50px;
+    position: relative;
+    width: 100px;
+    background-repeat: no-repeat;
+    background-image: url("./../images/pig2.png");
+}
+
+.pig3 {
+    height: 50px;
+    position: relative;
+    width: 100px;
+    background-repeat: no-repeat;
+    background-image: url("./../images/pig3.png");
+}
+
+.pig4 {
+    height: 50px;
+    position: relative;
+    width: 100px;
+    background-repeat: no-repeat;
+    background-image: url("./../images/pig1.png");
+}
