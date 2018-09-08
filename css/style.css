@@ -21,10 +21,13 @@ html, body{
 }
 .logo{
     background-image:url('./../images/logo.gif');
-    width:90%;
-    height:90%;
-    background-size: 40%;
+    width:40%;
+    height:35%;
+    top:-22%;
+    left:0%;
+    background-size: cover;
     background-repeat:no-repeat;
+    position: relative;
 }
 .step{ 
  
@@ -75,7 +78,7 @@ left:40px;
 
 nav {
     position:fixed;
-    margin-top:-9%;
+    margin-top:11%;
     display: grid;
     grid-template-columns: repeat(5);
     grid-auto-rows: auto;
