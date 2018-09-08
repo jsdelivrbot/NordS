@@ -34,37 +34,89 @@ $(document).ready(function () {
     $('.logo').addClass('hidden');
     //////////////////////////////////////////////////
 
-    $('#pig1').on('mouseenter', function () {
+    $('#pig0').on('mouseenter', function () {
+
         $('.pigInfo').removeClass('hidden');
-        $( ".pigInfo" ).append('<p id="t"></p>'  );
+        $(".pigInfo").append('<p id="t"></p>');
         console.log("t added");
-        showPigStats();
+        showPigStats(0);
     });
 
-    $('#pig1').on('mouseout', function () {
-      $('.pigInfo').addClass('hidden');
-  
-    $('#t').remove();
-    console.log("t removed!");
- 
+    $('#pig1').on('mouseenter', function () {
+
+        $('.pigInfo').removeClass('hidden');
+        $(".pigInfo").append('<p id="t"></p>');
+        console.log("t added");
+        showPigStats(1);
+    });
+
+    $('#pig2').on('mouseenter', function () {
+
+        $('.pigInfo').removeClass('hidden');
+        $(".pigInfo").append('<p id="t"></p>');
+        console.log("t added");
+        showPigStats(2);
+    });
+
+
+    $('#pig3').on('mouseenter', function () {
+
+        $('.pigInfo').removeClass('hidden');
+        $(".pigInfo").append('<p id="t"></p>');
+        console.log("t added");
+        showPigStats(3);
+    });
+
+    $('.pig').on('mouseout', function () {
+        $('.pigInfo').addClass('hidden');
+
+        $('#t').remove();
+        console.log("t removed!");
+
     });
 
 
 
-    function showPigStats() {
+    function showPigStats(whichPig) {
 
         // document.getElementsByClassName("pigInfo")[0].classList.remove("hidden");
         // document.getElementsByClassName("pigInfo")[0].innerHTML = "";
         // document.getElementsByClassName("locker")[0].classList.add("fade-in");
-
-        $('#t').t(`
+        switch (whichPig) {
+            case 0:
+                $('#t').t(`
        Age: 7 months<br/>
        Weight:90kg <br/>
        Gender: female<br/>
        Health: healthy`);
+                break;
+
+
+
+            case 1:
+                $('#t').t(`
+Age: 8 months<br/>
+Weight:70kg <br/>
+Gender: male<br/>
+Health: healthy`);
+                break;
+            case 2:
+                $('#t').t(`
+Age: 11months<br/>
+Weight:80kg <br/>
+Gender: female<br/>
+Health: frightened`);
+                break;
+
+            case 3:
+                $('#t').t(`
+                        Age: 6 months<br/>
+                        Weight:90kg <br/>
+                        Gender: male<br/>
+                        Health: healthy`);
+                break;
+        }
     }
-
-
 });
 
 
@@ -126,3 +178,18 @@ $(document).ready(function () {
 //     weaponOn = true;
 //     rifle.play();
 // }
+
+
+$( function() {
+    $( ".draggable" ).draggable({axis:"x",
+    delay: 100,
+    scrollSpeed: 10,
+    revert: true});
+  } );
+
+  $( "#processing" ).droppable({
+    drop: function() {
+      alert("dropped");
+    }
+}
+    );

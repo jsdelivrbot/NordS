@@ -127,9 +127,9 @@ li {
 
 
 .pigs {display:grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: 20% 20% 20% 20% 20%;
     height: 50%;
-    width: 79%;
+    width: 100%;
     position: absolute;
     top: 50%;
     left: 4%;
@@ -138,10 +138,16 @@ li {
    
 }
 
-.pig1 {
+
+.pig{
+    /* border:1px solid white; */
+
+    height: 160px;
+    width: 200px;
+
+}
+#pig1 {
   
-    height: 200px;
-    width: 250px;
     position: relative;
     background-repeat: no-repeat;
     background-image: url("./../images/pig1.png");
@@ -150,9 +156,8 @@ li {
 
 }
 
-.pig2 {
-    height: 200px;
-    width: 250px;
+#pig2 {
+
     position: relative;
     background-repeat: no-repeat;
     background-image: url("./../images/pig2.png");
@@ -160,9 +165,8 @@ li {
     background-size:cover;
 }
 
-.pig3 {
-    height: 200px;
-    width: 250px;
+#pig3 {
+   
     position: relative;
     background-repeat: no-repeat;
     background-image: url("./../images/pig2.png");
@@ -170,9 +174,8 @@ li {
     background-size:cover;
 }
 
-.pig4 {
-    height: 200px;
-    width: 250px;
+#pig0 {
+  
     position: relative;
     background-repeat: no-repeat;
     background-image: url("./../images/pig1.png");
@@ -200,7 +203,8 @@ li {
     height:40%;
      top:5%;
     left:5%;
-    /* transform:translate(-50%,-50%); */
+    align-content: center;
+    text-align: center;
     align-items: center;
     justify-content: center;
 
@@ -210,6 +214,11 @@ li {
     color:greenyellow;
 }
 
+#processing{
+    height:100px;
+    width:100px;
+    border:1px solid red;
+}
 .tools{
     float:right;
     z-index:11;
