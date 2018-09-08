@@ -2,7 +2,6 @@
     border:0;
     padding:0;
  
-    color:pink;
 }
 
 html, body{
@@ -193,9 +192,22 @@ li {
     background-image:url('./../images/locker.png');
 }
 .pigInfo{
-    border:2px solid orange;
+    border:1px solid orange;
     color:orangered;
+    display:flex;
+    position:absolute;
+    width:90%;
+    height:40%;
+     top:5%;
+    left:5%;
+    /* transform:translate(-50%,-50%); */
+    align-items: center;
+    justify-content: center;
 
+
+}
+#t{
+    color:greenyellow;
 }
 
 .tools{
