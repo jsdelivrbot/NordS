@@ -6,39 +6,52 @@
 }
 
 html, body{
+    overflow: hidden;
 
     height:100%;
+    width:100%;
+    background-color:black;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 .logo{
-    background-image:url('./../images/logo.png');
+    background-image:url('./../images/logo.gif');
     width:90%;
     height:90%;
     background-size: 40%;
     background-repeat:no-repeat;
 }
 .step{ 
-    position:fixed;
+ 
     
-    top:0;
-    left:0;
-
-    width: 100%;
-    height: 100%;
-    background-repeat:no-repeat;
-    background-size:cover;
+    display:flex;
+    position:absolute;
+    width:90%;
+    height:90%;
+    border:solid 1px gray;
+    top:5%;
+    left:5%;
+    /* transform:translate(-50%,-50%); */
+    align-items: center;
+    justify-content: center;
      
 }
 
-.step0{  
-
-    background-image:url('../images/splashBG.png');
+.step0{
+    
+background-color:black;
+    /* background-image:url('../images/splashBG.png'); */
 
 }
 
 .step1{  
    
-    background-image:url('../images/workStation1.png');
+    /* background-image:url('../images/workStation1.png'); */
 
 }
 .step2{  
@@ -114,44 +127,55 @@ li {
 .pigs {display:grid;
     grid-template-columns: 25% 25% 25% 25%;
     height: 50%;
-    width: 90%;
+    width: 79%;
     position: absolute;
     top: 50%;
-    left: 5%;
+    left: 4%;
     margin: 10px;
+    
    
 }
 
 .pig1 {
-    height: 50px;
+  
+    height: 200px;
+    width: 250px;
     position: relative;
-    width: 100px;
     background-repeat: no-repeat;
     background-image: url("./../images/pig1.png");
+
+    background-size:cover;
+
 }
 
 .pig2 {
-    height: 50px;
+    height: 200px;
+    width: 250px;
     position: relative;
-    width: 100px;
     background-repeat: no-repeat;
     background-image: url("./../images/pig2.png");
+   
+    background-size:cover;
 }
 
 .pig3 {
-    height: 50px;
+    height: 200px;
+    width: 250px;
     position: relative;
-    width: 100px;
     background-repeat: no-repeat;
-    background-image: url("./../images/pig3.png");
+    background-image: url("./../images/pig2.png");
+
+    background-size:cover;
 }
 
 .pig4 {
-    height: 50px;
+    height: 200px;
+    width: 250px;
     position: relative;
-    width: 100px;
     background-repeat: no-repeat;
     background-image: url("./../images/pig1.png");
+    
+    background-size:cover;
 }
 
 
