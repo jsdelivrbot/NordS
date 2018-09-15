@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-        <script src="./js/jquery.js"></script>
-        <script src="./js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
-        <script src="./js/jQuery-Plugin-To-Simulate-Terminal-Text-Effects-t-js/t.min.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script src="./js/jQuery-Plugin-To-Simulate-Terminal-Text-Effects-t-js/t.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -14,34 +14,41 @@
     <title>North Pig</title>
 </head>
 
-<body >
+<body>
 
     <div class="step step0" id="appFrame">
 
         <p class="tools hidden" id="tools"></p>
-               
-            
-            
-    <audio>
-      
-        <source src="./audio/scottHappy.mp3" type="audio/mpeg"> Your browser does not support the audio element.
-    </audio>
-   <audio><source src="./audio/Rifle.wav" type="audio/wav"></audio>
-   <audio><source src="./audio/RifleShot.wav" type="audio/wav"></audio>
-
-   <audio><source src="./audio/PigSqueal.wav" type="audio/wav"></audio>
-
-   <audio><source src="" type=""></audio>
-
-   <audio><source src="" type=""></audio>
-
-   <audio><source src="" type=""></audio>
-
-   <audio><source src="" type=""></audio>
 
 
 
-   
+        <audio>
+
+            <source src="./audio/scottHappy.mp3" type="audio/mpeg"> Your browser does not support the audio element.
+        </audio>
+        <audio>
+            <source src="./audio/Rifle.wav" type="audio/wav"></audio>
+        <audio>
+            <source src="./audio/RifleShot.wav" type="audio/wav"></audio>
+
+        <audio>
+            <source src="./audio/PigSqueal.wav" type="audio/wav"></audio>
+
+        <audio>
+            <source src="" type=""></audio>
+
+        <audio>
+            <source src="" type=""></audio>
+
+        <audio>
+            <source src="" type=""></audio>
+
+        <audio>
+            <source src="" type=""></audio>
+
+
+
+
         <div class="logo"></div>
         <nav class="nav">
             <ul>
@@ -59,35 +66,41 @@
             </ul>
         </nav>
 
-</div>
-  
-    
+    </div>
+
+
     <!-- Workstation1-->
-    
+    <h2 class="instruction hidden">Choose a pig to slaughter</h2>
     <div class="pigs hidden" id="pigs">
         <div class="pig draggable" id="pig1"></div>
         <div class="pig draggable" id="pig2"></div>
         <div class="pig draggable" id="pig3"></div>
         <div class="pig draggable" id="pig0"></div>
-        <div id="processing" ></div>
+        <div id="processing"></div>
     </div>
 
-<p class="pigInfo hidden">
-    <!-- Workstation2-->
-    <div class="locker hidden " id="locker1"></div>
+    <p class="pigInfo hidden">
+        <!-- Workstation2-->
+        <div class="locker hidden " id="locker1"></div>
 
 
-    <!-- Workstation3-->
-
-   
-    <!-- Workstation3-->
-
-    <script>
-        var audio = new Audio("./audio/scottHappy.mp3");
+        <!-- confirmation panel-->
+        <div class="confirmation-panel hidden">
 
        
-    </script>
-    <script src="./js/app.js"></script>
+        <h2 class="panel-message">this is the confirmation panel message</h2>
+            <div class="pig-portrait1"></div>
+        <button class="confirmy">YES</button>
+        <button class="confirmn">NO</button>
+        </div>
+
+
+        <!-- Workstation3-->
+
+        <script>
+            var audio = new Audio("./audio/scottHappy.mp3");
+        </script>
+        <script src="./js/app.js"></script>
 
 
 </body>

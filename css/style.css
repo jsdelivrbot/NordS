@@ -18,10 +18,31 @@ html, body{
     justify-content: center;
 
 }
+
+
+.instruction{
+
+   
+    color:orangered;
+    display:flex;
+    position:absolute;
+    width:90%;
+    height:40%;
+     top:5%;
+    left:5%;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-image:url("../images/bg1.png");
+    
+
+
+}
 .logo{
     background-image:url('./../images/logo.gif');
-    width:40%;
-    height:35%;
+    width:42%;
+    height:40%;
     top:-22%;
     left:0%;
     background-size: cover;
@@ -35,7 +56,7 @@ html, body{
     position:absolute;
     width:90%;
     height:90%;
-    border:solid 1px gray;
+    /* border:solid 1px gray; */
     top:5%;
     left:5%;
     /* transform:translate(-50%,-50%); */
@@ -231,10 +252,31 @@ li {
 }
 
 
+.pig-portrait1{
+    background-image:url('../images/pig3.png');
+    height:256px;
+    width:256px;
+    background-size:cover;
+    top:0%;
+    left:0%;
 
+}
+.confirmation-panel{
 
+    border:3px solid green;
+    background-image:url(../images/bg1.png);
+    color:white;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    z-index: 500;
+   padding:50px;
+}
 
-
+button{
+    margin:10px;
+    padding:10px;
+}
 
 
 
@@ -256,6 +298,23 @@ li {
     animation-duration: .5s;
 }
 
+.fade-out {
+    opacity: 1;
+    animation-name: fadeOutOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOutOpacity {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
 @keyframes fadeInOpacity {
     0% {
         opacity: 0;
@@ -270,3 +329,12 @@ li {
     opacity: 0;
     transition: visibility 0s 2s, opacity .5s linear;
   }
+
+  .show {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s 2s, opacity .5s linear;
+  }
+
+  /* /////////ANIMATIONS/////////// */
+

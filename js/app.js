@@ -2,6 +2,7 @@ var pig1 = document.getElementById('pig1');
 var pig2 = document.getElementById('pig2');
 var pig3 = document.getElementById('pig3');
 var pig4 = document.getElementById('pig4');
+
 var pigs = document.getElementById('pigs');
 var tools = document.getElementById('tools');
 var locker = document.getElementById('locker1');
@@ -10,28 +11,34 @@ var audio = new Audio("./audio/scottHappy.mp3");
 var rShot = new Audio("./audio/RifleShot.wav");
 var squeal1 = new Audio("./audio/PigSqueal.wav");
 
+var pigGender = "Gild";
+var pigAge="8 months";
+let allPigs = [pig1, pig2, pig3, pig4];
+
 let weaponOn = false;
 var rifle = new Audio("./audio/Rifle.wav");
 $(document).ready(function () {
-
-    // pigs.classList.remove("hidden");
-
-    // document.getElementsByTagName("body")[0].classList.remove("step0");
-    // document.getElementsByTagName("body")[0].classList.add("step1");
-
-    // document.getElementsByTagName("nav")[0].classList.add("hidden");
-
-    // document.getElementsByClassName("logo")[0].classList.add("hidden");
+    console.log(allPigs.length);
     /*
-    //////////////////////////////////////////////////////////
-    TEMPORARY FORCE APP TO START ON TUTORIAL STEP1
-    ////////////////////////////////////////////////////////
-    */
-    $('.pigs').removeClass('hidden');
-    $('#appFrame').removeClass('step0');
-    $('#appFrame').addClass('step1');
-    $('nav').addClass('hidden');
-    $('.logo').addClass('hidden');
+        //////////////////////////////////////////////////////////
+    COMMENT OUT TO FORCE APP TO START ON TUTORIAL STEP1
+        ////////////////////////////////////////////////////////
+        */
+    $('#tutorial').click(function () {
+
+        $('.pigs').removeClass('hidden');
+        $('#appFrame').removeClass('step0');
+        $('#appFrame').addClass('step1');
+        $('nav').addClass('hidden');
+        $('.logo').addClass('hidden');
+
+        setTimeout(function () {
+            $('.instruction').addClass('fade-in');
+            $('.instruction').removeClass('hidden');
+
+        }, 1000);
+
+    });
     //////////////////////////////////////////////////
 
     $('#pig0').on('mouseenter', function () {
@@ -78,118 +85,195 @@ $(document).ready(function () {
 
 
     function showPigStats(whichPig) {
+        $('.instruction').addClass('hide');
 
-        // document.getElementsByClassName("pigInfo")[0].classList.remove("hidden");
-        // document.getElementsByClassName("pigInfo")[0].innerHTML = "";
-        // document.getElementsByClassName("locker")[0].classList.add("fade-in");
         switch (whichPig) {
             case 0:
                 $('#t').t(`
-       Age: 7 months<br/>
-       Weight:90kg <br/>
-       Gender: female<br/>
-       Health: healthy`);
+                Age: 7 months<br/>
+                Weight:90kg <br/>
+                Gender: female<br/>
+                Health: anxious`);
                 break;
 
 
 
             case 1:
                 $('#t').t(`
-Age: 8 months<br/>
-Weight:70kg <br/>
-Gender: male<br/>
-Health: healthy`);
+                Age: 8 months<br/>
+                Weight: 70kg <br/>
+                Gender: male<br/>
+                Health: healthy`);
                 break;
+
             case 2:
                 $('#t').t(`
-Age: 11months<br/>
-Weight:80kg <br/>
-Gender: female<br/>
-Health: frightened`);
+                Age: 11 months<br/>
+                Weight: 80kg <br/>
+                Gender: female<br/>
+                Health: frightened`);
                 break;
 
             case 3:
                 $('#t').t(`
-                        Age: 6 months<br/>
-                        Weight:90kg <br/>
-                        Gender: male<br/>
-                        Health: healthy`);
+                 Age: 6 months<br/>
+                 Weight: 90kg <br/>
+                 Gender: male<br/>
+                 Health: healthy`);
                 break;
         }
+
+        setTimeout(function () {
+            $('.instruction').text('drag your selection to Workstation 2');
+
+            $('.instruction').addClass('show');
+
+        }, 3000);
     }
+
+
+
+    $(function () {
+        $(".draggable").draggable({
+            axis: "x",
+            delay: 100,
+            scrollSpeed: 10,
+            revert: false
+        });
+    });
+
+    $("#processing").droppable({
+        drop: function () {
+            //  alert("dropped");
+            var thisPig = ($(event.target).attr("id"));
+
+            var pigId = thisPig.slice(3);
+            console.log(pigId);
+            allPigs.splice(pigId, 1);
+
+            console.log(allPigs.length, thisPig);
+            confirmSelection();
+        }
+    });
+
+    function confirmSelection() {
+        $('.confirmation-panel').removeClass('hidden');
+        console.log("confirmation panel should be visible")
+$('panel-message').html(`good choice! <br/> 
+You have selected a medium sized ${pigGender}, ${pigAge}, suitable for slaughter.` );
+
+
+        $('.confirmy').click(function () {
+
+            
+            startSlaughtermode();
+            $(event.target).removeClass('fade-out');
+            $('.confirmation-panel').addClass('fade-out');
+
+        });
+
+        $('.confirmn').click(function () {
+            //  $(function () {
+            //it would be nice if selected pig returned to original position...
+
+            // $(".draggable").draggable({
+            //     revert: true
+            // }); 
+            //});
+
+
+
+            $('.confirmation-panel').addClass('fade-out');
+        });
+        
+
+
+    }
+
+
+    function startSlaughtermode() {
+
+        //     fade-out other pigs
+
+
+        $('#pig1').addClass('fade-out');
+        $('#pig2').addClass('fade-out');
+        $('#pig3').addClass('fade-out');
+        $('#pig0').addClass('fade-out');
+
+    }
+
+    console.log("starting slaughter mode");
+    //     center and zoom selected pig
+
+    //     good choice!
+    //     or 
+    //     This pig is small. It is not an economical choice. We recommend that you choose a larger animal. Continue anyway? y/n
+    //     or
+    //     This pig is a little big for your first slaughter. A bigger animal has more fatty tissue and may be a greater challenge.
+    //     This could get messy. Continue?
+
+
+    //     Step 1: A Humane kill:
+
+    //     Tie (gender) hind legs together, as rapidly as possible. Hook the rope to the pully.
+    //         pully hoist red button. If user pushes the button, the pig is hoisted screaming and thrashing.
+    //         lower the pig immediately! 5 second timer if lowered:
+    //         A conscious pig should never be hoisted.
+    //         Stun or kill the animal, first.
+
+    //      Select stungun shotgut or boltgun
+
+    //     Aim at the forehead to shoot the brain.
+    //     if (killshot){
+    //     Good job!
+    //     Now hoist and we'll get a nice bleed.
+
+    //     hoist swinnging pig. high enough so that (gender) front legs are just off the ground.
+
+    //     Niiiiccceeee....
+
+    //     stickThePig();
+
+    // if(shotgun || boltgun)    Disrgard the spasms: these are common. The pig is effectively unconscious. 
+    //     stickThePig();
+
+    // if(stungun){}
+    //     }
+    //     else{
+
+    //         bad shot. try again.
+    //         5 bad shots.
+    //         Sorry, you have failed. 
+    //     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
-
-
-// pig1.onclick = function () {
-//     if (weaponOn) {
-//         console.log("bang!");
-//         audio.pause();
-//         rShot.play();
-//         squeal1.play();
-//         //flash
-
-//         pig2.style.display="none";
-//         pig3.style.display="none";
-//         pig4.style.display="none";
-
-//         window.setTimeout(endShow(), 2000);
-
-//     } else {
-//     document.getElementsByClassName("locker")[0].classList.remove("hidden");
-
-
-//     // squeal.play();
-
-// };
-// }
-
-
-// document.getElementById('tutorial').addEventListener("click", function () {
-//     pigs.classList.remove("hidden");
-
-//     document.getElementsByTagName("body")[0].classList.remove("step0");
-//     document.getElementsByTagName("body")[0].classList.add("step1");
-
-//     document.getElementsByTagName("nav")[0].classList.add("hidden");
-
-//     document.getElementsByClassName("logo")[0].classList.add("hidden");
-
-// });
-
-
-// locker.onclick = function () {
-//     console.log("locker clicked");
-//     locker.style.border = "2px solid orange";
-//     document.getElementsByClassName("tools")[0].classList.remove("hidden");
-//     document.getElementsByClassName("tools")[0].classList.add("fade-in");
-//     document.getElementsByClassName("tools")[0].innerHTML = `Rifle<br />
-//     <br />
-//     Stun Gun
-//     <br /><br />
-//     Bolt Gun`;
-
-// };
-
-// tools.onclick = function () {
-
-//     document.getElementsByClassName("locker")[0].classList.add("hide");
-
-//     document.getElementsByClassName("pigInfo")[0].classList.add("hide");
-//     weaponOn = true;
-//     rifle.play();
-// }
-
-
-$( function() {
-    $( ".draggable" ).draggable({axis:"x",
-    delay: 100,
-    scrollSpeed: 10,
-    revert: true});
-  } );
-
-  $( "#processing" ).droppable({
-    drop: function() {
-      alert("dropped");
-    }
-}
-    );
