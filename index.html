@@ -2,21 +2,55 @@
 <html lang="en">
 
 <head>
+
+
+
+
     <script src="./js/jquery.js"></script>
     <script src="./js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+   
+    <script src="./js/makisu.js"></script>
+
     <script src="./js/jQuery-Plugin-To-Simulate-Terminal-Text-Effects-t-js/t.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="./css/style.css" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+   
 
     <title>North Pig</title>
+
+
 </head>
 
 <body>
+      
 
     <div class="step step0" id="appFrame">
+
+        <!-- slaughterView-->
+
+
+        <div class="slaughterView">
+            <div class="pig-portrait2"></div>
+            <dl class="list nigiri">
+
+                <dt>Select</dt>
+
+                <dd><a href="#">Bolt Gun</a></dd>
+                <dd><a href="#">Stun Gun</a></dd>
+                <dd><a href="#">Shot Gun</a></dd>
+                <dd><a href="#">Other</a></dd>
+
+
+            </dl>
+        </div>
+
+        <script>
+            var audio = new Audio("./audio/scottHappy.mp3");
+        </script>
+        <script src="./js/app.js"></script>
 
         <p class="tools hidden" id="tools"></p>
 
@@ -87,20 +121,13 @@
         <!-- confirmation panel-->
         <div class="confirmation-panel hidden">
 
-       
-        <h2 class="panel-message">this is the confirmation panel message</h2>
+
+            <h2 class="panel-message">this is the confirmation panel message</h2>
             <div class="pig-portrait1"></div>
-        <button class="confirmy">YES</button>
-        <button class="confirmn">NO</button>
+            <button class="confirmy">YES</button>
+            <button class="confirmn">NO</button>
         </div>
 
-
-        <!-- Workstation3-->
-
-        <script>
-            var audio = new Audio("./audio/scottHappy.mp3");
-        </script>
-        <script src="./js/app.js"></script>
 
 
 </body>

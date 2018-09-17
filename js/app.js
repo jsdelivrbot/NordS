@@ -21,24 +21,27 @@ $(document).ready(function () {
     console.log(allPigs.length);
     /*
         //////////////////////////////////////////////////////////
-    COMMENT OUT TO FORCE APP TO START ON TUTORIAL STEP1
+    COMMENT OUT TO FORCE APP TO START ON slaughtermode
         ////////////////////////////////////////////////////////
         */
-    $('#tutorial').click(function () {
+//$('#tutorial').click(function () {
 
-        $('.pigs').removeClass('hidden');
-        $('#appFrame').removeClass('step0');
-        $('#appFrame').addClass('step1');
-        $('nav').addClass('hidden');
-        $('.logo').addClass('hidden');
+        // $('.pigs').removeClass('hidden');
+        // $('#appFrame').removeClass('step0');
+        // $('#appFrame').addClass('step1');
+        // $('nav').addClass('hidden');
+        // $('nav').addClass('hidden');
+        // $('.logo').addClass('hidden');
 
-        setTimeout(function () {
-            $('.instruction').addClass('fade-in');
-            $('.instruction').removeClass('hidden');
+        // setTimeout(function () {
+        //     $('.instruction').addClass('fade-in');
+        //     $('.instruction').removeClass('hidden');
 
-        }, 1000);
+        // }, 1000);
+     startSlaughtermode();
 
-    });
+
+//});
     //////////////////////////////////////////////////
 
     $('#pig0').on('mouseenter', function () {
@@ -159,8 +162,9 @@ $(document).ready(function () {
     function confirmSelection() {
         $('.confirmation-panel').removeClass('hidden');
         console.log("confirmation panel should be visible")
-$('panel-message').html(`good choice! <br/> 
-You have selected a medium sized ${pigGender}, ${pigAge}, suitable for slaughter.` );
+$('.panel-message').html(`good choice! <br/> 
+You have selected a medium sized ${pigGender}, ${pigAge}, suitable for slaughter.<br />
+Continue?` );
 
 
         $('.confirmy').click(function () {
@@ -202,8 +206,18 @@ You have selected a medium sized ${pigGender}, ${pigAge}, suitable for slaughter
         $('#pig0').addClass('fade-out');
 
     }
+$('nav').addClass('hidden');
+        $('.logo').addClass('hidden');
 
     console.log("starting slaughter mode");
+    var $nigiri = $( '.nigiri' );
+    $nigiri.makisu({
+        selector: 'dd',
+        overlap: 0.85,
+        speed: 1.7
+    });
+
+    $( '.list' ).makisu( 'open' );
     //     center and zoom selected pig
 
     //     good choice!
