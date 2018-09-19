@@ -199,14 +199,14 @@ Continue?` );
 
         //     fade-out other pigs
 
-
+$('.instruction').removeClass('hidden');
+$('.instruction').css({"top":"-8%"});
+$('.instruction').html('Select a weapon');
         $('#pig1').addClass('fade-out');
         $('#pig2').addClass('fade-out');
         $('#pig3').addClass('fade-out');
         $('#pig0').addClass('fade-out');
-
-    }
-$('nav').addClass('hidden');
+        $('nav').addClass('hidden');
         $('.logo').addClass('hidden');
 
     console.log("starting slaughter mode");
@@ -218,6 +218,14 @@ $('nav').addClass('hidden');
     });
 
     $( '.list' ).makisu( 'open' );
+
+$('#bolt').click(function(){weaponChosen(bolt)});
+$('#stun').click(function(){weaponChosen(stun)});
+$('#shot').click(function(){weaponChosen(shot)});
+
+    }
+
+
     //     center and zoom selected pig
 
     //     good choice!
@@ -287,7 +295,20 @@ $('nav').addClass('hidden');
 
 
 
-
+$('.pig-portrait2').click(function(){
+if(weaponOn){console.log("bang");}
+});
 
 
 });
+
+function weaponChosen(weapon){
+    $( '.list' ).makisu( 'close' );
+    setTimeout(function(){
+        $( '.list' ).addClass( 'fade-out' );
+
+
+    },1000);
+    $('.instruction').html('Aim at the forehead to shoot the brain.');
+        weaponOn=true;
+}

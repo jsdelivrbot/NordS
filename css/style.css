@@ -34,7 +34,7 @@ html, body{
     text-align: center;
     align-items: center;
     justify-content: center;
-    background-image:url("../images/bg1.png");
+    /* background-image:url("../images/bg1.png"); */
     
 
 
@@ -373,6 +373,8 @@ button{
     margin-left: 90px;
     margin-top: -280px;
     top: 55%;
+    z-index: 500;
+
   }
   
   .list a {
