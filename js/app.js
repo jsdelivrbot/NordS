@@ -12,7 +12,7 @@ var rShot = new Audio("./audio/RifleShot.wav");
 var squeal1 = new Audio("./audio/PigSqueal.wav");
 
 var pigGender = "Gild";
-var pigAge="8 months";
+var pigAge = "8 months";
 let allPigs = [pig1, pig2, pig3, pig4];
 
 let weaponOn = false;
@@ -24,24 +24,24 @@ $(document).ready(function () {
     COMMENT OUT TO FORCE APP TO START ON slaughtermode
         ////////////////////////////////////////////////////////
         */
-//$('#tutorial').click(function () {
+    //$('#tutorial').click(function () {
 
-        // $('.pigs').removeClass('hidden');
-        // $('#appFrame').removeClass('step0');
-        // $('#appFrame').addClass('step1');
-        // $('nav').addClass('hidden');
-        // $('nav').addClass('hidden');
-        // $('.logo').addClass('hidden');
+    // $('.pigs').removeClass('hidden');
+    // $('#appFrame').removeClass('step0');
+    // $('#appFrame').addClass('step1');
+    // $('nav').addClass('hidden');
+    // $('nav').addClass('hidden');
+    // $('.logo').addClass('hidden');
 
-        // setTimeout(function () {
-        //     $('.instruction').addClass('fade-in');
-        //     $('.instruction').removeClass('hidden');
+    // setTimeout(function () {
+    //     $('.instruction').addClass('fade-in');
+    //     $('.instruction').removeClass('hidden');
 
-        // }, 1000);
-     startSlaughtermode();
+    // }, 1000);
+    startSlaughtermode();
 
 
-//});
+    //});
     //////////////////////////////////////////////////
 
     $('#pig0').on('mouseenter', function () {
@@ -162,14 +162,14 @@ $(document).ready(function () {
     function confirmSelection() {
         $('.confirmation-panel').removeClass('hidden');
         console.log("confirmation panel should be visible")
-$('.panel-message').html(`good choice! <br/> 
+        $('.panel-message').html(`good choice! <br/> 
 You have selected a medium sized ${pigGender}, ${pigAge}, suitable for slaughter.<br />
-Continue?` );
+Continue?`);
 
 
         $('.confirmy').click(function () {
 
-            
+
             startSlaughtermode();
             $(event.target).removeClass('fade-out');
             $('.confirmation-panel').addClass('fade-out');
@@ -189,7 +189,7 @@ Continue?` );
 
             $('.confirmation-panel').addClass('fade-out');
         });
-        
+
 
 
     }
@@ -199,9 +199,11 @@ Continue?` );
 
         //     fade-out other pigs
 
-$('.instruction').removeClass('hidden');
-$('.instruction').css({"top":"-8%"});
-$('.instruction').html('Select a weapon');
+        $('.instruction').removeClass('hidden');
+        $('.instruction').css({
+            "top": "-8%"
+        });
+        $('.instruction').html('Select a weapon');
         $('#pig1').addClass('fade-out');
         $('#pig2').addClass('fade-out');
         $('#pig3').addClass('fade-out');
@@ -209,19 +211,25 @@ $('.instruction').html('Select a weapon');
         $('nav').addClass('hidden');
         $('.logo').addClass('hidden');
 
-    console.log("starting slaughter mode");
-    var $nigiri = $( '.nigiri' );
-    $nigiri.makisu({
-        selector: 'dd',
-        overlap: 0.85,
-        speed: 1.7
-    });
+        console.log("starting slaughter mode");
+        var $nigiri = $('.nigiri');
+        $nigiri.makisu({
+            selector: 'dd',
+            overlap: 0.85,
+            speed: 1.7
+        });
 
-    $( '.list' ).makisu( 'open' );
+        $('.list').makisu('open');
 
-$('#bolt').click(function(){weaponChosen(bolt)});
-$('#stun').click(function(){weaponChosen(stun)});
-$('#shot').click(function(){weaponChosen(shot)});
+        $('#bolt').click(function () {
+            weaponChosen(bolt)
+        });
+        $('#stun').click(function () {
+            weaponChosen(stun)
+        });
+        $('#shot').click(function () {
+            weaponChosen(shot)
+        });
 
     }
 
@@ -295,20 +303,37 @@ $('#shot').click(function(){weaponChosen(shot)});
 
 
 
-$('.pig-portrait2').click(function(){
-if(weaponOn){console.log("bang");}
-});
+    $('.pig-portrait2').click(function () {
+        if (weaponOn) {
+            console.log("bang");
+            $('.instruction').html('');
+            $('.pig-portrait2').addClass('fade-out');
+            setTimeout(function () {
+                $('.slaughterView').addClass('hidden');
+                $('.bleedView').removeClass('hidden');
+                $('.instruction').html('Now bleed the pig.');
+                             hoistPig();
+            }, 1000);
+
+
+        }
+    });
 
 
 });
 
-function weaponChosen(weapon){
-    $( '.list' ).makisu( 'close' );
-    setTimeout(function(){
-        $( '.list' ).addClass( 'fade-out' );
+function weaponChosen(weapon) {
+    $('.list').makisu('close');
+    setTimeout(function () {
+        $('.list').addClass('fade-out');
 
 
-    },1000);
+    }, 1000);
     $('.instruction').html('Aim at the forehead to shoot the brain.');
-        weaponOn=true;
+    weaponOn = true;
+}
+
+
+function hoistPig (){
+    console.log('pig hoisting...');
 }
