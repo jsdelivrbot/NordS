@@ -50,3 +50,30 @@ I think all these shitty functionalies are from the 'a new version of cock scrip
 //I need more swear words. And now this café is playing idiot rock.
 
 No, it's not. It's something to do with my mouse or this laptop. Reddit is also acting the eejit selection wise. That's actually a relief. Bluejay sucks.
+
+
+
+22.09.2018
+I want to convey the undramatized reality of an awful event which is necessitated by the consumption of pork produce.
+
+
+The pig has been selected and a basic kill has been simulated.
+The next step is to simulate the 'bleeding' a hoist pig.
+
+The pig is hoisted onto the screen, still twitching and swaying.
+
+The tool locker offers a 'pig sticker', and when selected, the mouse pointer becomes a long blade held blade up.
+
+the user should click on the pigs throat, burying the top part of the blade and adding a red wound at entry point.
+
+a vertical thrust of sufficient depth severs a major artery to the heart and blood flows down.
+
+how is this represented in code?
+
+if click when knife over pig, add wound square at click point. add pigskin colouredmask above blade; so any vertical motion appears to bury the knife in the body.
+
+click also enables drag and drop of invisible blocks; so what the user is really doing is dragging a block called entrypointwound onto a block called heart artery block. if on mouse release the entry point wound is touching the heart artery block; we can say that the knife entered the pig and proceeded to sever the artery.
+
+then we can generate blood graphics and pin them to invisible matter.js blocks and let them cascade from the pig, simulating the bleed.
+
+if that works, the more complex process of eviceration can follow the same model.

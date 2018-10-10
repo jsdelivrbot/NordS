@@ -24,24 +24,23 @@ $(document).ready(function () {
     COMMENT OUT TO FORCE APP TO START ON slaughtermode
         ////////////////////////////////////////////////////////
         */
-    //$('#tutorial').click(function () {
+    $('#tutorial').click(function () {
 
-    // $('.pigs').removeClass('hidden');
-    // $('#appFrame').removeClass('step0');
-    // $('#appFrame').addClass('step1');
-    // $('nav').addClass('hidden');
-    // $('nav').addClass('hidden');
-    // $('.logo').addClass('hidden');
+    $('.pigs').removeClass('hidden');
+    $('#appFrame').removeClass('step0');
+    $('#appFrame').addClass('step1');
+    $('nav').addClass('hidden');
+    $('nav').addClass('hidden');
+    $('.logo').addClass('hidden');
 
-    // setTimeout(function () {
-    //     $('.instruction').addClass('fade-in');
-    //     $('.instruction').removeClass('hidden');
+    setTimeout(function () {
+        $('.instruction').addClass('fade-in');
+        $('.instruction').removeClass('hidden');
 
-    // }, 1000);
-    startSlaughtermode();
+    }, 1000);
+    
 
-
-    //});
+    });
     //////////////////////////////////////////////////
 
     $('#pig0').on('mouseenter', function () {
@@ -205,13 +204,16 @@ Continue?`);
         });
         $('.instruction').html('Select a weapon');
         $('#pig1').addClass('fade-out');
+        $('confirmation-panel').addClass('fade-out');
         $('#pig2').addClass('fade-out');
         $('#pig3').addClass('fade-out');
         $('#pig0').addClass('fade-out');
         $('nav').addClass('hidden');
         $('.logo').addClass('hidden');
 
+
         console.log("starting slaughter mode");
+        $('.slaughterView').removeClass1('hidden');
         var $nigiri = $('.nigiri');
         $nigiri.makisu({
             selector: 'dd',
@@ -303,7 +305,7 @@ Continue?`);
 
 
 
-    $('.pig-portrait2').click(function () {
+    $('.pig-portrait1').click(function () {
         if (weaponOn) {
             console.log("bang");
             $('.instruction').html('');
@@ -316,6 +318,9 @@ Continue?`);
             }, 1000);
 
 
+        }
+        else{
+            console.log("select weapon")
         }
     });
 
@@ -331,6 +336,7 @@ function weaponChosen(weapon) {
     }, 1000);
     $('.instruction').html('Aim at the forehead to shoot the brain.');
     weaponOn = true;
+    console.log('weapon ready');
 }
 
 
