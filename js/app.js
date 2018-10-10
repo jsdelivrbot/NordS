@@ -169,7 +169,7 @@ Continue?`);
         $('.confirmy').click(function () {
 
 
-            startSlaughtermode();
+           startSlaughtermode();
             $(event.target).removeClass('fade-out');
             $('.confirmation-panel').addClass('fade-out');
 
@@ -213,7 +213,7 @@ Continue?`);
 
 
         console.log("starting slaughter mode");
-        $('.slaughterView').removeClass1('hidden');
+        $('.slaughterView').removeClass('hidden');
         var $nigiri = $('.nigiri');
         $nigiri.makisu({
             selector: 'dd',
